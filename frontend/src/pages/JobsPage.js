@@ -43,7 +43,7 @@ export default function JobsPage() {
 
   // Initial load (use URL search param)
   useEffect(() => { const init = searchParams.get('search') || ''; setSearchInput(init); fetchJobs(init, [], ''); 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+  // eslint-disable-next-line
   }, []);
   const handleTypeToggle = type => {
     const updated = selectedTypes.includes(type)
