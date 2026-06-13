@@ -1,0 +1,7 @@
+﻿.notfound-page { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: radial-gradient(ellipse at center, rgba(0,201,167,0.05) 0%, transparent 60%); }
+.notfound-inner { text-align: center; padding: 40px; }
+.notfound-code { font-family: 'Space Grotesk', sans-serif; font-size: 120px; font-weight: 800; line-height: 1; background: linear-gradient(135deg, var(--accent), #58a6ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 16px; }
+.notfound-inner h1 { font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; color: var(--text-primary); margin-bottom: 10px; }
+.notfound-inner p { font-size: 15px; color: var(--text-secondary); margin-bottom: 28px; }
+.notfound-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; background: var(--accent); color: #0d1117; border-radius: var(--radius-md); font-size: 15px; font-weight: 700; text-decoration: none; }
+.notfound-btn:hover { background: var(--accent-dark); }

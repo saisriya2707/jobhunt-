@@ -1,0 +1,47 @@
+﻿.detail-page { min-height: 100vh; }
+.detail-layout { max-width: 1200px; margin: 0 auto; padding: 28px 24px; display: flex; gap: 24px; align-items: flex-start; }
+.detail-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 16px; }
+.detail-card { background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 24px; }
+.detail-header { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 16px; }
+.detail-logo { width: 64px; height: 64px; object-fit: contain; background: #fff; padding: 8px; border-radius: var(--radius-md); border: 1px solid var(--border); flex-shrink: 0; }
+.detail-title { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; color: var(--text-primary); margin-bottom: 6px; }
+.detail-rating-row { display: flex; align-items: center; gap: 8px; }
+.detail-rating-num { font-size: 14px; color: var(--text-secondary); }
+/* Add this to JobDetailPage.css - makes .apply-btn work properly as an <a> tag */
+.apply-btn {
+  margin-left: auto; padding: 10px 24px;
+  background: var(--accent); color: #0d1117;
+  border: none; border-radius: var(--radius-md);
+  font-size: 14px; font-weight: 700; white-space: nowrap;
+  display: flex; align-items: center; gap: 7px;
+  text-decoration: none;
+  transition: background 0.15s, transform 0.1s;
+}
+.apply-btn:hover { background: var(--accent-dark); transform: translateY(-1px); }
+.apply-btn.applied { background: var(--success); cursor: default; }
+.detail-meta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; padding-top: 16px; border-top: 1px solid var(--border-light); }
+.detail-meta-item { display: flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text-secondary); }
+.detail-meta-item i { color: var(--accent); }
+.detail-meta-salary { margin-left: auto; font-size: 15px; font-weight: 700; color: var(--accent); display: flex; align-items: center; gap: 5px; }
+.detail-section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+.detail-section-header h2 { font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 600; color: var(--text-primary); }
+.visit-link { display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: var(--accent); padding: 6px 14px; border-radius: var(--radius-sm); background: var(--accent-glow); border: 1px solid rgba(0,201,167,0.2); cursor: pointer; }
+.detail-section-title { font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 600; color: var(--text-primary); margin-bottom: 16px; }
+.detail-description { font-size: 14px; color: var(--text-secondary); line-height: 1.8; }
+.skills-grid { display: flex; flex-wrap: wrap; gap: 12px; }
+.skill-chip { display: flex; align-items: center; gap: 9px; background: var(--bg-hover); border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 8px 14px; font-size: 13px; font-weight: 500; color: var(--text-primary); }
+.skill-img { width: 22px; height: 22px; object-fit: contain; }
+.life-content { display: flex; gap: 20px; align-items: flex-start; }
+.life-text { flex: 1; font-size: 14px; color: var(--text-secondary); line-height: 1.8; }
+.life-img { width: 220px; height: 140px; object-fit: cover; border-radius: var(--radius-md); flex-shrink: 0; }
+.similar-sidebar { width: 280px; flex-shrink: 0; }
+.similar-title { font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 700; color: var(--text-primary); margin-bottom: 14px; }
+.similar-list { display: flex; flex-direction: column; gap: 12px; }
+.similar-card { display: block; background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 16px; text-decoration: none; transition: all 0.2s; }
+.similar-card:hover { border-color: var(--accent); transform: translateY(-1px); }
+.similar-top { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+.similar-logo { width: 40px; height: 40px; object-fit: contain; background: #fff; padding: 4px; border-radius: var(--radius-sm); border: 1px solid var(--border); flex-shrink: 0; }
+.similar-job-title { font-size: 14px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px; }
+.similar-meta { display: flex; flex-wrap: wrap; gap: 10px; font-size: 12px; color: var(--text-secondary); }
+.similar-meta i { color: var(--accent); }
+@media (max-width: 900px) { .detail-layout { flex-direction: column; } .similar-sidebar { width: 100%; } .life-content { flex-direction: column; } .life-img { width: 100%; } }
