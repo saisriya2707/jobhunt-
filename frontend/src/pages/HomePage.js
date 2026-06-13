@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { API_BASE_URL } from '../api';
 import Header from '../components/Header';
 import './HomePage.css';
 
@@ -11,7 +12,7 @@ export default function HomePage() {
   const [searchInput, setSearchInput] = useState('');
 
   useEffect(() => {
-    fetch('/profile', { headers: { Authorization: `Bearer ${token}` } })
+    fetch(`${API_BASE_URL}/profile`, { headers: { Authorization: `Bearer ${token}` } })
       .then(r => r.json())
       .then(setProfile)
       .catch(() => {});
@@ -61,7 +62,7 @@ export default function HomePage() {
               </form>
               <div className="popular-tags">
                 <span>Popular:</span>
-                {['Frontend', 'Backend', 'Machine Learning', 'DevOps', 'iOS'].map(tag => (
+                {['Frontend', 'Backend', 'Machine Learning', 'DevOps', 'iOS', 'Data Scientist', 'AI'].map(tag => (
                   <button key={tag} className="tag-pill"
                     onClick={() => navigate(`/jobs?search=${encodeURIComponent(tag)}`)}>
                     {tag}
@@ -91,11 +92,11 @@ export default function HomePage() {
             <div className="categories-grid">
               {[
                 { icon: 'fa-code', label: 'Engineering', count: 480, color: '#00c9a7' },
-                { icon: 'fa-paint-brush', label: 'Design', count: 120, color: '#a371f7' },
-                { icon: 'fa-chart-bar', label: 'Data & ML', count: 210, color: '#e3b341' },
+                { icon: 'fa-database', label: 'Data Science', count: 220, color: '#a371f7' },
+                { icon: 'fa-brain', label: 'AI / ML', count: 180, color: '#e3b341' },
                 { icon: 'fa-server', label: 'DevOps', count: 95, color: '#f85149' },
                 { icon: 'fa-mobile-alt', label: 'Mobile', count: 140, color: '#39d353' },
-                { icon: 'fa-shield-alt', label: 'Security', count: 60, color: '#58a6ff' },
+                { icon: 'fa-table', label: 'Database', count: 60, color: '#58a6ff' },
               ].map(cat => (
                 <button key={cat.label} className="cat-card"
                   onClick={() => navigate(`/jobs?search=${encodeURIComponent(cat.label)}`)}>

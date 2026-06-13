@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { API_BASE_URL } from '../api';
 import Header from '../components/Header';
 import StarRating from '../components/StarRating';
 import './JobDetailPage.css';
@@ -15,7 +16,7 @@ export default function JobDetailPage() {
 
   useEffect(() => {
     setStatus(STATUS.LOADING);
-    fetch(`/jobs/${id}`, { headers: { Authorization: `Bearer ${token}` } })
+    fetch(`${API_BASE_URL}/jobs/${id}`, { headers: { Authorization: `Bearer ${token}` } })
       .then(r => { if (!r.ok) throw new Error(); return r.json(); })
       .then(d => { setData(d); setStatus(STATUS.SUCCESS); })
       .catch(() => setStatus(STATUS.FAILURE));
@@ -35,7 +36,6 @@ export default function JobDetailPage() {
       <div className="detail-page">
         <Header />
         <div className="failure-container">
-          <img src="https://assets.ccbp.in/frontend/react-js/failure-img.png" alt="failure" />
           <h2>Oops! Something went wrong</h2>
           <p>We couldn't load this job. Please try again.</p>
           <button className="retry-btn" onClick={() => setStatus(STATUS.LOADING)}>Retry</button>

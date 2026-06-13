@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { API_BASE_URL } from '../api';
 import './LoginPage.css';
 
 export default function LoginPage() {
@@ -24,7 +25,7 @@ export default function LoginPage() {
     if (!password) { setError('Please enter your password'); return; }
     setError(''); setLoading(true);
     try {
-      const res = await fetch('/login', {
+      const res = await fetch(`${API_BASE_URL}/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password }),
